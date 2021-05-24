@@ -9,14 +9,22 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import "./components/lamborghini";
 import "./components/html_animations";
 
+import gsap from 'gsap';
+
 let loaderRan = false;
 const runLoader = () => {
     const loadPercentage = Math.floor(window.loaded/totalLoaded * 100);
     document.querySelector(".load-percent").textContent = 
     document.querySelector(".loader-progress").style.width = `${loadPercentage}%`;
     if(loadPercentage === 100 && !loaderRan) {
-        window.lamborghiniLoop();
         window.html_animations();
+        setTimeout(() => {
+            let tl = gsap.timeline();
+            gsap.to(".loaderTopHalf", { duration: 0.8, top: "-50%",});
+            tl.to(".loaderBottomHalf", { duration: 0.8, bottom: "-50%",});
+            tl.to(".loader-overlay", { duration: 0, display: "none"});
+            window.lamborghiniLoop();
+        }, 800);
         loaderRan = true;
     }
 }
