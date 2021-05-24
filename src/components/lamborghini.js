@@ -42,9 +42,9 @@ const parallax = (e) => {
         x: (e.clientX/window.innerWidth - 0.5) * 0.125,
         y: -(1 - (e.clientY/window.innerHeight)) * 0.125,
     }
-    if(window.lamborghiniBox) {
+    if(window.lamborghini) {
         gsap.to(
-            window.lamborghiniBox.rotation,
+            window.lamborghini.rotation,
             {
                 x: paraE.y,
                 y: -paraE.x,

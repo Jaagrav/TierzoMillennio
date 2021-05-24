@@ -11,6 +11,13 @@ body {
     background-color: black;
 }
 
+.section {
+    position: relative;
+    top: 0;right: 0;left: 0;bottom: 0;
+    margin: auto;
+    max-width: 1460px;
+}
+
 .webgl
 {
     position: fixed;
@@ -155,4 +162,28 @@ body {
     margin: auto;
     bottom: 0;left: 0;
     background: red;
+}
+
+
+.hero-section .h6, 
+.hero-section .h1,
+.hero-section .gutterTop,
+.discover-section .h6, 
+.discover-section .h1,
+.discover-section .gutterTop {
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.discover-section .h6, 
+.discover-section .h1,
+.discover-section .gutterTop {
+    padding-left: 50px;
+}
+
+.discover-section div.h6 {
+    max-width: 48pc;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 100;
 }
